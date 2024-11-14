@@ -23,15 +23,19 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(377, 367)
-        sizePolicy = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
+        MainWindow.resize(375, 360)
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Ignored, QSizePolicy.Policy.Ignored)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
         MainWindow.setSizePolicy(sizePolicy)
+        MainWindow.setMinimumSize(QSize(375, 360))
+        MainWindow.setMaximumSize(QSize(375, 360))
         MainWindow.setMouseTracking(False)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
+        sizePolicy.setHeightForWidth(self.centralwidget.sizePolicy().hasHeightForWidth())
+        self.centralwidget.setSizePolicy(sizePolicy)
         self.lineEdit = QLineEdit(self.centralwidget)
         self.lineEdit.setObjectName(u"lineEdit")
         self.lineEdit.setGeometry(QRect(10, 10, 351, 51))
@@ -40,6 +44,9 @@ class Ui_MainWindow(object):
         sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.lineEdit.sizePolicy().hasHeightForWidth())
         self.lineEdit.setSizePolicy(sizePolicy1)
+        font = QFont()
+        font.setPointSize(20)
+        self.lineEdit.setFont(font)
         self.lineEdit.setCursorPosition(0)
         self.lineEdit.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
         self.layoutWidget = QWidget(self.centralwidget)
@@ -90,9 +97,9 @@ class Ui_MainWindow(object):
         sizePolicy3.setVerticalStretch(0)
         sizePolicy3.setHeightForWidth(self.valButton_8.sizePolicy().hasHeightForWidth())
         self.valButton_8.setSizePolicy(sizePolicy3)
-        font = QFont()
-        font.setPointSize(15)
-        self.valButton_8.setFont(font)
+        font1 = QFont()
+        font1.setPointSize(15)
+        self.valButton_8.setFont(font1)
 
         self.MainKeyboardLayout.addWidget(self.valButton_8, 0, 2, 1, 1)
 
@@ -100,7 +107,7 @@ class Ui_MainWindow(object):
         self.dotButton.setObjectName(u"dotButton")
         sizePolicy3.setHeightForWidth(self.dotButton.sizePolicy().hasHeightForWidth())
         self.dotButton.setSizePolicy(sizePolicy3)
-        self.dotButton.setFont(font)
+        self.dotButton.setFont(font1)
 
         self.MainKeyboardLayout.addWidget(self.dotButton, 3, 2, 1, 1)
 
@@ -108,7 +115,7 @@ class Ui_MainWindow(object):
         self.valButton_6.setObjectName(u"valButton_6")
         sizePolicy3.setHeightForWidth(self.valButton_6.sizePolicy().hasHeightForWidth())
         self.valButton_6.setSizePolicy(sizePolicy3)
-        self.valButton_6.setFont(font)
+        self.valButton_6.setFont(font1)
 
         self.MainKeyboardLayout.addWidget(self.valButton_6, 1, 3, 1, 1)
 
@@ -116,7 +123,7 @@ class Ui_MainWindow(object):
         self.valButton_2.setObjectName(u"valButton_2")
         sizePolicy3.setHeightForWidth(self.valButton_2.sizePolicy().hasHeightForWidth())
         self.valButton_2.setSizePolicy(sizePolicy3)
-        self.valButton_2.setFont(font)
+        self.valButton_2.setFont(font1)
 
         self.MainKeyboardLayout.addWidget(self.valButton_2, 2, 2, 1, 1)
 
@@ -124,7 +131,7 @@ class Ui_MainWindow(object):
         self.valButton_9.setObjectName(u"valButton_9")
         sizePolicy3.setHeightForWidth(self.valButton_9.sizePolicy().hasHeightForWidth())
         self.valButton_9.setSizePolicy(sizePolicy3)
-        self.valButton_9.setFont(font)
+        self.valButton_9.setFont(font1)
 
         self.MainKeyboardLayout.addWidget(self.valButton_9, 0, 3, 1, 1)
 
@@ -132,7 +139,7 @@ class Ui_MainWindow(object):
         self.valButton_0.setObjectName(u"valButton_0")
         sizePolicy3.setHeightForWidth(self.valButton_0.sizePolicy().hasHeightForWidth())
         self.valButton_0.setSizePolicy(sizePolicy3)
-        self.valButton_0.setFont(font)
+        self.valButton_0.setFont(font1)
 
         self.MainKeyboardLayout.addWidget(self.valButton_0, 3, 1, 1, 1)
 
@@ -140,7 +147,7 @@ class Ui_MainWindow(object):
         self.msButton.setObjectName(u"msButton")
         sizePolicy3.setHeightForWidth(self.msButton.sizePolicy().hasHeightForWidth())
         self.msButton.setSizePolicy(sizePolicy3)
-        self.msButton.setFont(font)
+        self.msButton.setFont(font1)
         self.msButton.setMouseTracking(False)
         self.msButton.setAutoFillBackground(False)
 
@@ -150,7 +157,7 @@ class Ui_MainWindow(object):
         self.valButton_7.setObjectName(u"valButton_7")
         sizePolicy3.setHeightForWidth(self.valButton_7.sizePolicy().hasHeightForWidth())
         self.valButton_7.setSizePolicy(sizePolicy3)
-        self.valButton_7.setFont(font)
+        self.valButton_7.setFont(font1)
 
         self.MainKeyboardLayout.addWidget(self.valButton_7, 0, 1, 1, 1)
 
@@ -158,7 +165,7 @@ class Ui_MainWindow(object):
         self.valButton_4.setObjectName(u"valButton_4")
         sizePolicy3.setHeightForWidth(self.valButton_4.sizePolicy().hasHeightForWidth())
         self.valButton_4.setSizePolicy(sizePolicy3)
-        self.valButton_4.setFont(font)
+        self.valButton_4.setFont(font1)
 
         self.MainKeyboardLayout.addWidget(self.valButton_4, 1, 1, 1, 1)
 
@@ -166,7 +173,7 @@ class Ui_MainWindow(object):
         self.valButton_1.setObjectName(u"valButton_1")
         sizePolicy3.setHeightForWidth(self.valButton_1.sizePolicy().hasHeightForWidth())
         self.valButton_1.setSizePolicy(sizePolicy3)
-        self.valButton_1.setFont(font)
+        self.valButton_1.setFont(font1)
 
         self.MainKeyboardLayout.addWidget(self.valButton_1, 2, 1, 1, 1)
 
@@ -174,7 +181,7 @@ class Ui_MainWindow(object):
         self.plusMinusButton.setObjectName(u"plusMinusButton")
         sizePolicy3.setHeightForWidth(self.plusMinusButton.sizePolicy().hasHeightForWidth())
         self.plusMinusButton.setSizePolicy(sizePolicy3)
-        self.plusMinusButton.setFont(font)
+        self.plusMinusButton.setFont(font1)
 
         self.MainKeyboardLayout.addWidget(self.plusMinusButton, 3, 3, 1, 1)
 
@@ -182,7 +189,7 @@ class Ui_MainWindow(object):
         self.mrButton.setObjectName(u"mrButton")
         sizePolicy3.setHeightForWidth(self.mrButton.sizePolicy().hasHeightForWidth())
         self.mrButton.setSizePolicy(sizePolicy3)
-        self.mrButton.setFont(font)
+        self.mrButton.setFont(font1)
 
         self.MainKeyboardLayout.addWidget(self.mrButton, 1, 0, 1, 1)
 
@@ -190,7 +197,7 @@ class Ui_MainWindow(object):
         self.valButton_3.setObjectName(u"valButton_3")
         sizePolicy3.setHeightForWidth(self.valButton_3.sizePolicy().hasHeightForWidth())
         self.valButton_3.setSizePolicy(sizePolicy3)
-        self.valButton_3.setFont(font)
+        self.valButton_3.setFont(font1)
 
         self.MainKeyboardLayout.addWidget(self.valButton_3, 2, 3, 1, 1)
 
@@ -198,7 +205,7 @@ class Ui_MainWindow(object):
         self.valButton_5.setObjectName(u"valButton_5")
         sizePolicy3.setHeightForWidth(self.valButton_5.sizePolicy().hasHeightForWidth())
         self.valButton_5.setSizePolicy(sizePolicy3)
-        self.valButton_5.setFont(font)
+        self.valButton_5.setFont(font1)
 
         self.MainKeyboardLayout.addWidget(self.valButton_5, 1, 2, 1, 1)
 
@@ -206,7 +213,7 @@ class Ui_MainWindow(object):
         self.mPlusButton.setObjectName(u"mPlusButton")
         sizePolicy3.setHeightForWidth(self.mPlusButton.sizePolicy().hasHeightForWidth())
         self.mPlusButton.setSizePolicy(sizePolicy3)
-        self.mPlusButton.setFont(font)
+        self.mPlusButton.setFont(font1)
 
         self.MainKeyboardLayout.addWidget(self.mPlusButton, 2, 0, 1, 1)
 
@@ -214,7 +221,7 @@ class Ui_MainWindow(object):
         self.mMinusButton.setObjectName(u"mMinusButton")
         sizePolicy3.setHeightForWidth(self.mMinusButton.sizePolicy().hasHeightForWidth())
         self.mMinusButton.setSizePolicy(sizePolicy3)
-        self.mMinusButton.setFont(font)
+        self.mMinusButton.setFont(font1)
 
         self.MainKeyboardLayout.addWidget(self.mMinusButton, 3, 0, 1, 1)
 
@@ -222,7 +229,7 @@ class Ui_MainWindow(object):
         self.multButton.setObjectName(u"multButton")
         sizePolicy3.setHeightForWidth(self.multButton.sizePolicy().hasHeightForWidth())
         self.multButton.setSizePolicy(sizePolicy3)
-        self.multButton.setFont(font)
+        self.multButton.setFont(font1)
 
         self.MainKeyboardLayout.addWidget(self.multButton, 0, 4, 1, 1)
 
@@ -230,7 +237,7 @@ class Ui_MainWindow(object):
         self.divButton.setObjectName(u"divButton")
         sizePolicy3.setHeightForWidth(self.divButton.sizePolicy().hasHeightForWidth())
         self.divButton.setSizePolicy(sizePolicy3)
-        self.divButton.setFont(font)
+        self.divButton.setFont(font1)
 
         self.MainKeyboardLayout.addWidget(self.divButton, 1, 4, 1, 1)
 
@@ -238,7 +245,7 @@ class Ui_MainWindow(object):
         self.plusButton.setObjectName(u"plusButton")
         sizePolicy3.setHeightForWidth(self.plusButton.sizePolicy().hasHeightForWidth())
         self.plusButton.setSizePolicy(sizePolicy3)
-        self.plusButton.setFont(font)
+        self.plusButton.setFont(font1)
 
         self.MainKeyboardLayout.addWidget(self.plusButton, 2, 4, 1, 1)
 
@@ -246,7 +253,7 @@ class Ui_MainWindow(object):
         self.minusButton.setObjectName(u"minusButton")
         sizePolicy3.setHeightForWidth(self.minusButton.sizePolicy().hasHeightForWidth())
         self.minusButton.setSizePolicy(sizePolicy3)
-        self.minusButton.setFont(font)
+        self.minusButton.setFont(font1)
 
         self.MainKeyboardLayout.addWidget(self.minusButton, 3, 4, 1, 1)
 
@@ -254,7 +261,7 @@ class Ui_MainWindow(object):
         self.equalButton.setObjectName(u"equalButton")
         sizePolicy3.setHeightForWidth(self.equalButton.sizePolicy().hasHeightForWidth())
         self.equalButton.setSizePolicy(sizePolicy3)
-        self.equalButton.setFont(font)
+        self.equalButton.setFont(font1)
 
         self.MainKeyboardLayout.addWidget(self.equalButton, 3, 5, 1, 1)
 
@@ -262,7 +269,7 @@ class Ui_MainWindow(object):
         self.expButton.setObjectName(u"expButton")
         sizePolicy3.setHeightForWidth(self.expButton.sizePolicy().hasHeightForWidth())
         self.expButton.setSizePolicy(sizePolicy3)
-        self.expButton.setFont(font)
+        self.expButton.setFont(font1)
 
         self.MainKeyboardLayout.addWidget(self.expButton, 1, 5, 1, 1)
 
