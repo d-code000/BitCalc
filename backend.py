@@ -9,7 +9,7 @@ class Calculator:
         self.memory: int = 0
 
     def get_result(self) -> int:
-        if self.first_num and self.second_num and self.operation:
+        if self.first_num is not None and self.second_num is not None and self.operation:
             match self.operation:
                 case '+': result = self.first_num + self.second_num
                 case '-': result = self.first_num - self.second_num

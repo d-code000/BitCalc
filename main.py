@@ -51,6 +51,35 @@ class CalculatorWindow(QMainWindow):
         self.ui.valButton_8.clicked.connect(self.add_digit)
         self.ui.valButton_9.clicked.connect(self.add_digit)
 
+    def toggle_buttons(self, enable: bool) -> None:
+
+        enable = not enable
+
+        self.ui.backspaseButton.setDisabled(enable)
+        self.ui.mPlusButton.setDisabled(enable)
+        self.ui.mMinusButton.setDisabled(enable)
+        self.ui.mrButton.setDisabled(enable)
+        self.ui.msButton.setDisabled(enable)
+        self.ui.plusMinusButton.setDisabled(enable)
+        self.ui.plusButton.setDisabled(enable)
+        self.ui.minusButton.setDisabled(enable)
+        self.ui.multButton.setDisabled(enable)
+        self.ui.divButton.setDisabled(enable)
+        self.ui.expButton.setDisabled(enable)
+        self.ui.equalButton.setDisabled(enable)
+
+        self.ui.valButton_0.setDisabled(enable)
+        self.ui.valButton_1.setDisabled(enable)
+        self.ui.valButton_2.setDisabled(enable)
+        self.ui.valButton_3.setDisabled(enable)
+        self.ui.valButton_4.setDisabled(enable)
+        self.ui.valButton_5.setDisabled(enable)
+        self.ui.valButton_6.setDisabled(enable)
+        self.ui.valButton_7.setDisabled(enable)
+        self.ui.valButton_8.setDisabled(enable)
+        self.ui.valButton_9.setDisabled(enable)
+        self.ui.dotButton.setDisabled(enable)
+
     def get_result(self) -> None:
         try:
             self.calculator.second_num = int(self.lineEdit.text())
@@ -59,6 +88,7 @@ class CalculatorWindow(QMainWindow):
             self.lineEdit.setText(str(result))
         except ZeroDivisionError:
             self.lineEdit.setText('Деление на ноль')
+            self.toggle_buttons(False)
         except SyntaxError:
             self.calculator.second_num = None
 
@@ -90,10 +120,12 @@ class CalculatorWindow(QMainWindow):
     def clear_line(self) -> None:
         self.lineEdit.clear()
         self.lineEdit.setText('0')
+        self.toggle_buttons(True)
 
     def clear_all_line(self) -> None:
         self.calculator.clear()
         self.clear_line()
+        self.toggle_buttons(True)
 
     def add_digit(self) -> None:
         btn: QPushButton = self.sender()
